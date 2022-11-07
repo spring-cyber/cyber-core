@@ -1,4 +1,4 @@
-package com.cyber.utils;
+package com.cyber.infrastructure.toolkit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

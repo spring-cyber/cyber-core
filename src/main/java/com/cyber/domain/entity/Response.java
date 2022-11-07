@@ -1,6 +1,6 @@
-package com.cyber.entity;
+package com.cyber.domain.entity;
 
-import com.cyber.constant.ResultCode;
+import com.cyber.domain.constant.ResultCode;
 
 import java.time.Instant;
 import java.time.ZonedDateTime;

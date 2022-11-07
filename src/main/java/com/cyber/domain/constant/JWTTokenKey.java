@@ -1,4 +1,4 @@
-package com.cyber.constant;
+package com.cyber.domain.constant;
 
 public class JWTTokenKey {
     public static final String X_CLIENT_TOKEN = "x-client-token";

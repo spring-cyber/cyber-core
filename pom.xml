@@ -13,7 +13,7 @@
 
     <groupId>io.github.spring-cyber</groupId>
     <artifactId>cyber-core</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 
     <name>cyber-core</name>
     <url>https://github.com/spring-cyber</url>

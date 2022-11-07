@@ -1,4 +1,4 @@
-package com.cyber.entity;
+package com.cyber.domain.entity;
 
 public class PagingData<T> extends Entity {
 

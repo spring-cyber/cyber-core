@@ -1,4 +1,4 @@
-package com.cyber.component;
+package com.cyber.infrastructure.extension;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

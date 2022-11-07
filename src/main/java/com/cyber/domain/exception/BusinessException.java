@@ -1,6 +1,6 @@
-package com.cyber.exception;
+package com.cyber.domain.exception;
 
-public class SystemException extends RuntimeException {
+public class BusinessException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
 	private String code;
@@ -8,24 +8,25 @@ public class SystemException extends RuntimeException {
 
     private String msg;
 
-    public SystemException(String msg) {
+    public BusinessException(String msg) {
 		super(msg);
 		this.msg = msg;
 	}
-
-	public SystemException(String msg, Throwable e) {
+	
+	public BusinessException(String msg, Throwable e) {
 		super(msg, e);
 		this.msg = msg;
 	}
-
-	public SystemException(String msg, String code) {
+	
+	public BusinessException(String msg, String code) {
 		super(msg);
 		this.msg = msg;
 		this.code = code;
 	}
-
-	public SystemException(String code, String msg,Throwable e) {
+	
+	public BusinessException(String code, String msg,  Throwable e) {
 		super(msg, e);
+
 		this.code = code;
 		this.msg = msg;
 	}

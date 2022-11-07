@@ -1,8 +1,10 @@
-package com.cyber.entity;
+package com.cyber.domain.entity;
 
+import javax.validation.constraints.NotBlank;
 
-public class IdEntity extends Entity {
+public class IdRequest extends Entity {
 
+    @NotBlank
     private String id;
 
     private String tenantCode;

@@ -1,8 +1,8 @@
-package com.cyber.utils;
+package com.cyber.infrastructure.toolkit;
 
 import com.alibaba.fastjson.JSON;
-import com.cyber.constant.ResultCode;
-import com.cyber.entity.Response;
+import com.cyber.domain.constant.ResultCode;
+import com.cyber.domain.entity.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

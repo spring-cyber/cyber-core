@@ -1,4 +1,4 @@
-package com.cyber.constant;
+package com.cyber.domain.constant;
 
 public enum HttpResultCode implements ResultCode {
     SUCCESS(200, "0"),

@@ -1,4 +1,4 @@
-package com.cyber.entity;
+package com.cyber.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
