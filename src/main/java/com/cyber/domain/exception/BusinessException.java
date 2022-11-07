@@ -3,55 +3,54 @@ package com.cyber.domain.exception;
 public class BusinessException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
-	private String code;
-	private String status;
+	private int code;
+	private int status;
+    private String message;
 
-    private String msg;
-
-    public BusinessException(String msg) {
-		super(msg);
-		this.msg = msg;
+    public BusinessException(String message) {
+		super(message);
+		this.message = message;
 	}
 	
-	public BusinessException(String msg, Throwable e) {
-		super(msg, e);
-		this.msg = msg;
+	public BusinessException(String message, Throwable e) {
+		super(message, e);
+		this.message = message;
 	}
 	
-	public BusinessException(String msg, String code) {
-		super(msg);
-		this.msg = msg;
+	public BusinessException(String message, int code) {
+		super(message);
+		this.message = message;
 		this.code = code;
 	}
 	
-	public BusinessException(String code, String msg,  Throwable e) {
-		super(msg, e);
+	public BusinessException(int code, String message,  Throwable e) {
+		super(message, e);
 
 		this.code = code;
-		this.msg = msg;
+		this.message = message;
 	}
 
-	public String getMsg() {
-		return msg;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
-	public String getStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 }
