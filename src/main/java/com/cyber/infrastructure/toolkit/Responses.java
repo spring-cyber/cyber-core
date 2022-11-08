@@ -39,6 +39,7 @@ public class Responses {
 
             Response result = new Response();
             result.setCode(resultCode.getCode());
+            result.setMessage(resultCode.getMessage());
             response.setStatus(resultCode.getCode());
             out.append(JSON.toJSONString(result));
         } catch (IOException e) {
