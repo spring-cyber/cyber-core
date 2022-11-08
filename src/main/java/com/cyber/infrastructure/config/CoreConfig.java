@@ -1,6 +1,7 @@
 
 package com.cyber.infrastructure.config;
 
+import okhttp3.OkHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -15,9 +16,9 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 @Configuration
-public class Config {
+public class CoreConfig {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Config.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CoreConfig.class);
 
     @Bean
     public Executor asyncExecutor() {
@@ -31,8 +32,8 @@ public class Config {
     }
 
     @Bean
-    public okhttp3.OkHttpClient okHttpClient() {
-        return new okhttp3.OkHttpClient.Builder()
+    public OkHttpClient okHttpClient() {
+        return new OkHttpClient.Builder()
                 .sslSocketFactory(sslSocketFactory(), x509TrustManager())
                 .hostnameVerifier(hostnameVerifier())
                 .retryOnConnectionFailure(true)
@@ -74,7 +75,7 @@ public class Config {
     }
 
     @Bean
-    public static HostnameVerifier hostnameVerifier() {
+    public HostnameVerifier hostnameVerifier() {
         HostnameVerifier hostnameVerifier = (s, sslSession) -> true;
         return hostnameVerifier;
     }

@@ -1,10 +1,12 @@
 package com.cyber.domain.entity;
 
+import java.util.List;
+
 public class PagingData<T> extends Entity {
 
     private int row;
 
-    private T data;
+    private List<T> data;
 
     public int getRow() {
         return row;
@@ -14,11 +16,11 @@ public class PagingData<T> extends Entity {
         this.row = row;
     }
 
-    public T getData() {
+    public List<T> getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(List<T> data) {
         this.data = data;
     }
 }
