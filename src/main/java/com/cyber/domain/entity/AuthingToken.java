@@ -2,13 +2,16 @@ package com.cyber.domain.entity;
 
 import java.util.HashSet;
 
-public class JWTToken<T> extends IdEntity {
+public class AuthingToken<T> extends IdEntity {
 
     private String sessionId;
     private String sessionName;
+
+    private String location;
+    private String avatar;
+    private Integer gender;
     private String deviceId;
     private String token;
-
     private HashSet<String> roles;
     private String jwtToken;
     private T user;
@@ -67,5 +70,29 @@ public class JWTToken<T> extends IdEntity {
 
     public void setUser(T user) {
         this.user = user;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
     }
 }
