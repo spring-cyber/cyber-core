@@ -13,6 +13,7 @@ public class UUIDs {
             "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
             "W", "X", "Y", "Z" };
 
+
     public static String generateShortUuid() {
         StringBuffer shortBuffer = new StringBuffer();
         String uuid = UUID.randomUUID().toString().replace("-", "");
