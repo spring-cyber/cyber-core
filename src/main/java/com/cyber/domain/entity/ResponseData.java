@@ -2,15 +2,15 @@ package com.cyber.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class DataResponse<T> extends Response {
+public class ResponseData<T> extends Response {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private T data;
 
-    public DataResponse() {
+    public ResponseData() {
     }
 
-    public DataResponse(T data) {
+    public ResponseData(T data) {
         this.data = data;
     }
 
@@ -22,12 +22,12 @@ public class DataResponse<T> extends Response {
         this.data = data;
     }
 
-    public DataResponse(int code, String message) {
+    public ResponseData(int code, String message) {
         super(code, message);
     }
 
-    public static <T> DataResponse<T> success(T data) {
-        DataResponse<T> responseData = new DataResponse<>(0, null);
+    public static <T> ResponseData<T> success(T data) {
+        ResponseData<T> responseData = new ResponseData<>(0, null);
         responseData.setData(data);
         return responseData;
     }

@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+
 import java.util.concurrent.CompletableFuture;
 
 @Component
@@ -32,7 +33,7 @@ public class OkHttpAsyExecutor {
                 if (!StringUtils.isEmpty(responseBody)) {
                     return CompletableFuture.completedFuture(JSONObject.parse(responseBody));
                 }
-                LOGGER.error("OkHttpClient Executor Request {} , Response Is Empty ...", JSON.toJSONString(request));
+                LOGGER.info("OkHttpClient Executor Request {} , Response Is Empty ...", JSON.toJSONString(request));
             }
         } catch (Exception exception) {
             LOGGER.error("OkHttpClient Executor Request {} , Exception ...", JSON.toJSONString(request), exception);

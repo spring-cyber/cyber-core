@@ -17,18 +17,17 @@ public enum HttpResultCode implements ResultCode {
     FILE_UPLOAD_ERROR(503, "File Upload Error"),
     FILE_DOWNLOAD_ERROR(504, "File Download Error");
 
-
-    private final int code;
+    private final Integer code;
     private final String message;
 
-    HttpResultCode(int code, String message) {
+    HttpResultCode(Integer code, String message) {
         this.code = code;
         this.message = message;
     }
 
 
     @Override
-    public int getCode() {
+    public Integer getCode() {
         return this.code;
     }
 

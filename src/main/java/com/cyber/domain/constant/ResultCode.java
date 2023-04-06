@@ -2,6 +2,6 @@ package com.cyber.domain.constant;
 
 public interface ResultCode {
 
-    int getCode();
+    Integer getCode();
     String getMessage();
 }

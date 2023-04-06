@@ -1,37 +1,38 @@
 package com.cyber.domain.entity;
 
+import com.cyber.domain.constant.HttpResultCode;
 import com.cyber.domain.constant.ResultCode;
 
 import java.time.Instant;
 import java.time.ZonedDateTime;
 
 public class Response extends Entity {
-    private int code = 0;
+    private Integer code = 200;
+
     private String message = "Success";
 
     private final Instant time;
-
 
     public Response() {
         this.time = ZonedDateTime.now().toInstant();
     }
 
-    public Response(int code) {
+    public Response(Integer code) {
         this.code = code;
         this.time = ZonedDateTime.now().toInstant();
     }
 
-    public Response(int code, String message) {
+    public Response(Integer code, String message) {
         this.code = code;
         this.message = message;
         this.time = ZonedDateTime.now().toInstant();
     }
 
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
@@ -44,17 +45,16 @@ public class Response extends Entity {
     }
 
     public boolean isSuccess() {
-        return "0".equals(code);
+        return HttpResultCode.SUCCESS.getCode().equals(code);
     }
 
     public static Response success() {
-        return new Response(0);
+        return new Response(HttpResultCode.SUCCESS.getCode());
     }
 
-    public static Response fail(int code,String message) {
-        return new Response(code,message);
+    public static Response fail(Integer code,String message) {
+        return new Response(code, message);
     }
-
 
     public static Response fail(ResultCode resultCode) {
         return new Response(resultCode.getCode(), resultCode.getMessage());
