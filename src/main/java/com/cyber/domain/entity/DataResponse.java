@@ -1,5 +1,6 @@
 package com.cyber.domain.entity;
 
+import com.cyber.domain.constant.HttpResultCode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 public class DataResponse<T> extends Response {
@@ -27,7 +28,7 @@ public class DataResponse<T> extends Response {
     }
 
     public static <T> DataResponse<T> success(T data) {
-        DataResponse<T> responseData = new DataResponse<>(0, null);
+        DataResponse<T> responseData = new DataResponse<>(HttpResultCode.SUCCESS.getCode(), null);
         responseData.setData(data);
         return responseData;
     }
