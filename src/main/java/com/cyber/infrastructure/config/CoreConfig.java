@@ -22,7 +22,6 @@ public class CoreConfig {
 
     @Bean
     public Executor asyncExecutor() {
-        LOGGER.info("== asyncExecutor ==");
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(100);
         executor.setMaxPoolSize(200);
@@ -34,7 +33,6 @@ public class CoreConfig {
 
     @Bean
     public OkHttpClient okHttpClient() {
-        LOGGER.info("== okHttpClient ==");
         return new OkHttpClient.Builder()
                 .sslSocketFactory(sslSocketFactory(), x509TrustManager())
                 .hostnameVerifier(hostnameVerifier())
@@ -48,7 +46,6 @@ public class CoreConfig {
 
     @Bean
     public X509TrustManager x509TrustManager() {
-        LOGGER.info("== x509TrustManager ==");
         return new X509TrustManager() {
             @Override
             public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
@@ -67,7 +64,6 @@ public class CoreConfig {
 
     @Bean
     public SSLSocketFactory sslSocketFactory() {
-        LOGGER.info("== sslSocketFactory ==");
         try {
             SSLContext sslContext = SSLContext.getInstance("TLS");
             sslContext.init(null, new TrustManager[]{x509TrustManager()}, new SecureRandom());
@@ -80,7 +76,6 @@ public class CoreConfig {
 
     @Bean
     public HostnameVerifier hostnameVerifier() {
-        LOGGER.info("== hostnameVerifier ==");
         HostnameVerifier hostnameVerifier = (s, sslSession) -> true;
         return hostnameVerifier;
     }
