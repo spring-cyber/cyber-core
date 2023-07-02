@@ -1,4 +1,5 @@
 package com.cyber.domain.entity;
+
 import java.util.Date;
 
 public class OperateEntity extends IdEntity {
@@ -6,12 +7,9 @@ public class OperateEntity extends IdEntity {
     private Date createTime;
 
     private String creator;
-    private String creatorId;
-
     private Date updateTime;
 
     private String updator;
-    private String updatorId;
 
     private Integer status;
     private Integer deleted = Integer.valueOf(0);
@@ -34,13 +32,6 @@ public class OperateEntity extends IdEntity {
         this.creator = creator;
     }
 
-    public String getCreatorId() {
-        return creatorId;
-    }
-
-    public void setCreatorId(String creatorId) {
-        this.creatorId = creatorId;
-    }
 
     public Date getUpdateTime() {
         return updateTime;
@@ -56,14 +47,6 @@ public class OperateEntity extends IdEntity {
 
     public void setUpdator(String updator) {
         this.updator = updator;
-    }
-
-    public String getUpdatorId() {
-        return updatorId;
-    }
-
-    public void setUpdatorId(String updatorId) {
-        this.updatorId = updatorId;
     }
 
     public Integer getStatus() {

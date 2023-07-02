@@ -12,6 +12,15 @@ public class PagingResponse<T> extends Response {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private int row;
 
+    public PagingResponse(List<T> data, int row) {
+        this.data = data;
+        this.row = row;
+    }
+
+    public PagingResponse() {
+
+    }
+
     public int getRow() {
         return row;
     }

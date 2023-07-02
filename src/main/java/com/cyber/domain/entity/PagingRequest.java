@@ -2,7 +2,7 @@ package com.cyber.domain.entity;
 
 import java.util.Date;
 
-public class PagingRequest extends Entity {
+public class PagingRequest extends OperateEntity {
 
     private Integer page = 1;
     private Integer pageSize = 15;
